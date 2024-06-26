@@ -70,7 +70,6 @@ if(isset($_POST['submit'])){
 		</div>
 <!-- BÊN DƯỚI LÀ sản phẩm -->
 <?php
-// Đảo ngược mảng để sản phẩm mới nhất được hiển thị đầu tiên
 		// Khởi tạo biến tổng số tiền
 	$total=0;
 	// Kiểm tra giỏ hàng có sản phẩm không

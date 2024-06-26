@@ -53,14 +53,10 @@ session_start();
       <a href="../index.php"><input type="button" value="Quay lại trang chủ"></a>
    </div>
    <?php
-	   // Kết nối CSDL
       $conn = mysqli_connect("localhost", "root", "", "ql_banhang");
-
-	   // Thêm thông tin đơn hàng vào CSDL
       $sql ="INSERT INTO donhang(iduser,tongtien,trangthai,diachi,sdt) VALUES( $_SESSION[id], $_SESSION[total], 'Đã thanh toán','$_SESSION[diachi]', $_SESSION[sdt])";
       $ketqua=mysqli_query($conn,$sql);
       $id =  mysqli_insert_id($conn);//lấy ID tự động tăng
-
       // Thêm thông tin chi tiết đơn hàng vào CSDL và cập nhật số lượng sản phẩm trong kho
       foreach ($_SESSION['cart'] as $key => $value){
 			$sql1 = "INSERT INTO chitietdonhang(iddonhang, iduser, idsp, soluong) VALUES ($id,$_SESSION[id], $key, $value)";
