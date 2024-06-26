@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+#body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#wrapper {
+    /* Kích thước màn hình là 1280 x 720*/
+    width: 100%;
+    height: 100vh;
+}
+
+#header {
+    width: 100%;
+    padding:0px 30px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#actions {
+    display: flex;
+}
+
+#actions .item {
+    margin-left: 65px;
+    font-size: 30px;
+}
+
+#banner {
+    width: 100%;
+    background-image: url("https://i.pinimg.com/564x/07/e6/c3/07e6c3224f563c6b84c1ef572b5d03cb.jpg");   
+    height: 459px;
+    margin-top: 0px;
+    display: flex;
+    padding: 0px 155px;
+    position: relative;
+}
+
+#banner .box-left ,#banner .box-right {
+    width: 50%;
+}
+
+#banner .box-left h2 {
+    font-size: 43px;
+    margin-top: 35px;
+    color: black;
+}
+
+#banner .box-left p {
+    color: rgb(29, 3, 3);
+}
+
+#banner .box-left button {
+    width: 191px;
+    height: 43px;
+    margin-top: 41px;
+    background-color: rgb(189, 113, 78);
+    border: none;
+    outline: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+#banner .box-left button:hover {
+    background: orange;
+}
+
+#banner .box-right {
+    padding-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .box-right img {
+    margin: 0px 10px;
+    animation: animation 3s infinite linear;
+}
+
+/*Responsive*/
+.grid {
+    border-top: 2px solid black;
+    margin-top: 50px;
+    padding-top: 35px;
+    padding-left: 25px;
+    width: 100%; /* chiều rộng khung*/
+    max-width: 100%;
+   /* margin: 0 auto; */
+    background-color: white;
+}
+
+.grid_full-width {
+    width: 100%;
+}
+
+.grid_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Test */
+.grid_column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid_column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid_column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+/* CSS Footer */
+
+/*.footer {
+    padding-top: 12px;
+    border-top: 3px solid black;
+}*/
+
+.footer__heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: rgb(167, 85, 38);
+}
+
+.footer-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-item__link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #666;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-item__link:hover {
+    color: red;
+}
+
+/* các icon theo dõi */
+.footer-item__icon {
+    font-size: 1.4rem; 
+    margin: -1px 8px 0 0; /* top right bottom left*/
+}
+
+.footer__dowload {
+    display: flex; /*2 logo nằm ngang nhau*/
+}
+
+.footer__dowload-qr {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgb(167, 85, 38);
+}
+
+.footer__dowload-apps {
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer__dowload-app-img {
+    height: 20px;
+}
+
+
+.footer__dowload-app-link {
+    color: transparent;
+    text-decoration: none; /* Định dạng văn bản bình thường, đây là dạng mặc định */
+}
+
+.grid__row .footer__text {
+    margin-top: 46px;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(167, 85, 38);
+}

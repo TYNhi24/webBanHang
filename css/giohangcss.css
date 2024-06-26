@@ -1,0 +1,275 @@
+*,
+*::before,
+*::after {		/* các ptu trên trang web sẽ ko có lề và đệm */
+	margin: 0;		/* đặt lề các ptu này về 0 */
+	padding: 0;		/* đặt khoảng đệm của các ptu này về 0 */
+	box-sizing: inherit;		/* đặt thuộc tính 'box-sizing' của ptu này để thừa hưởng từ ptu cha */
+}
+
+html {
+	font-size: 70.5%;		/* kích thước font chữ 70.5% */
+	box-sizing: border-box;		/* để đảm bảo kích thước ptu bao gồm cả đệm và đường viền 
+}
+
+body {		/* chọn ptu body trong trang web */
+	/*padding: 2rem 4rem;*/
+	line-height: 1.7;		/* chiều cao dòng của văn bản trong phần tử <body> là 1.7*/
+	font-family: "Nunito Sans", sans-serif;
+	color: #555;
+	min-height: 100vh;		/* chiều cao tối thiểu của phần tử <body> là 100% chiều cao của cửa sổ trình duyệt (viewport)*/
+}
+
+img {		/* chọn tất cả các ptu img trên trang web */
+	max-width: 100%;			/* chiều rộng tối đa của hình ảnh là 100% chiều rộng của phần tử chứa nó */
+	vertical-align: middle;		/* căn chỉnh dọc của hình ảnh */
+	border-radius: 4px;			/* góc bo tròn cho các cạnh của hình ảnh */
+}
+
+a {			/* chọn tất cả các ptu a trên trang web */
+	text-decoration: none;		/* loại bỏ mọi trang trí văn bản của liên kết (không có gạch chân) */
+	color: #333333;
+}
+
+a:hover {		/* chọn tất cả các phần tử <a> khi người dùng di chuột qua (hover) */
+	color: #f58551;			/* di chuột qua có màu cam nhạt */
+}
+
+button {			/* chọn tất cả các ptu button trên trang web */
+	background-color: #16cc9b;			/* màu nền của nút (màu xanh lá cây nhạt) */
+	border: 2px solid #16cc9b;			/* đường viền của nút (đường viền có độ rộng 2px, kiểu viền đặc (solid), màu sắc giống với màu nền của nút (#16cc9b)) */
+	color: #ffffff;						/* màu sắc của văn bản trên nút */
+	transition: all 0.25s linear;		/* hiệu ứng chuyển đổi cho các thay đổi của nút */
+	cursor: pointer;					/* kiểu con trỏ khi di chuột qua nút (quy tắc này thay đổi con trỏ thành hình bàn tay chỉ tay khi người dùng di chuột qua nút, cho thấy rằng nút có thể được nhấp vào.) */
+}
+
+button::after {		/* chọn phần tử giả ::after của tất cả các phần tử <button> trên trang web */
+	position: relative;			/* thuộc tính định vị của phần tử giả ::after */
+	right: 0;					/* vị trí của phần tử giả ::after so với cạnh phải của phần tử <button> */
+	content: " \276f";				/* chèn nội dung vào phần tử giả ::after (chèn ký tự Unicode \276f, là một mũi tên hướng sang phải (❯). Ký tự này sẽ xuất hiện sau nội dung của nút) */
+	content: " \276f";				
+	transition: all 0.15s linear;	/* hiệu ứng chuyển đổi cho các thay đổi của phần tử giả ::after */
+}
+
+button:hover {		/* chọn tất cả các phần tử <button> khi người dùng di chuột qua (hover) */
+	background-color: #f58551;		/* màu nền của nút khi ở trạng thái hover */
+	border-color: #f58551;			/* màu sắc của đường viền nút khi ở trạng thái hover (màu cam nhạt) */
+}
+
+button:hover::after {
+	right: -5px;			/* dịch chuyển 5px sang bên phải so với vị trí ban đầu, tạo ra hiệu ứng chuyển động, làm cho phần tử giả (kí tự mũi tên) trượt sang bên phải khi người dùng di chuột qua nút */
+}
+
+button:focus {		/* chọn tất cả các phần tử <button> khi chúng đang được tập trung (focus) */
+	outline: none;	/* đường viền nút thành không có khi nút đang được tập trung (loại bỏ đường viền xung quanh nút khi nó được tập trung) */
+}
+
+ul {			/* chọn tất cả các phần tử <ul> trên trang web */
+	padding: 0;				/* giá trị của khoảng đệm (padding) của <ul> thành 0 */
+	margin: 0;				/* giá trị của khoảng margin của <ul> thành 0 */
+	list-style-type: none;		/* loại bỏ kiểu danh sách mặc định (kiểu dấu đầu dòng) cho danh sách */
+}
+
+input {
+	transition: all 0.25s linear;		/* hiệu ứng chuyển đổi cho các thay đổi của các thuộc tính của phần tử <input> (áp dụng một hiệu ứng chuyển đổi mượt mà trong 0.25 giây) */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;		/* loại bỏ giao diện mặc định của các nút tăng/giảm giá trị */
+	margin: 0;
+}
+
+input {
+	outline: none;		/* đường viền (outline) của các phần tử <input> thành không có */
+}
+
+.containers {
+	width: 90%;		/* chiều rộng của các phần tử "containers" là 90% của phần tử cha */
+	margin: 0 auto;		/* margin top và bottom của các phần tử "containers" là 0 và margin left và right là "auto" */
+	overflow: auto;		/* overflow cho các phần tử "containers" là "auto" (các phần tử "containers" tự động hiển thị thanh cuộn ngang hoặc dọc nếu nội dung vượt quá kích thước của chúng) */
+}
+
+
+
+/* --- HEADER --- */
+header h1 {
+	font-family: "Bungee Inline", sans-serif;		/* kiểu chữ cho tiêu đề là "Bungee Inline" */
+	font-weight: 400;		/* độ đậm của chữ là 400 */
+	font-size: 3rem;		/* kích thước của chữ là 3 rem */
+	color: white;
+	margin-bottom: 2rem;	/* khoảng cách dưới của tiêu đề là 2rem */
+	text-align: center;		/* căn chỉnh văn bản trong tiêu đề vào giữa */
+	word-spacing: 3px;		/* khoảng cách giữa các từ là 3px */
+}
+
+header.container {
+	margin-bottom: 1.5rem;		/* khoảng cách (khoảng đệm) giữa cạnh dưới của một phần tử và các phần tử khác phía dưới nó */
+}
+
+.breadcrumb {
+	padding-top: 5px;		/* khoảng cách đệm bên trong cạnh trên của phần tử đó là 5px */
+}
+
+header .breadcrumb li {
+	float: left;		/* phần tử đó sẽ được đẩy sang bên trái và các phần tử tiếp theo sẽ nằm xung quanh phần tử này */
+	padding: 0 6px;		/* giá trị đệm cho các cạnh trên, dưới, trái và phải của phần tử (top-bottom: 0; 6px: left-right) */
+}
+
+header .breadcrumb li:first-child {
+	padding-left: 2px;		/* lớp breadcrumb nằm trong phần tử header sẽ có khoảng đệm 2px ở phía bên trái */
+}
+
+header .breadcrumb li:not(:last-child)::after {		/* thêm một ký hiệu mũi tên với khoảng đệm 8px bên trái vào tất cả các phần tử <li> trừ phần tử cuối cùng */
+	content: " \276f";			/* nội dung của pseudo-element là một ký hiệu mũi tên (❯) */
+	padding-left: 8px;
+}
+
+header .count {
+	float: right;		/* để định vị nó ở phía bên phải của header */
+}
+
+/* --- PRODUCT LIST --- */
+.products {
+	border-top: 1px solid #ddd;		/*  thêm một đường viền trên có độ rộng 1px, kiểu đường viền là solid (liền), màu sắc là #ddd (màu xám nhạt) */
+}
+
+.products > li {
+	padding: 1rem 0;		/* Khoảng đệm bên trong: 1 rem ở tất cả các cạnh */
+	background-color: #fff;
+	padding: 1rem;			/* Khoảng đệm bên trong là 1 rem */
+	margin-bottom: 1rem;	/* Khoảng cách dưới: 1 rem */
+}
+
+.row {
+	display: flex;
+}
+
+.col.left {
+	flex-basis: 70%;	/* chiếm 70% chiều rộng của phần tử cha (.row) và hiển thị nội dung "Left Content" */
+}
+
+.col.right {
+	flex-basis: 30%;	/* chiếm 30% chiều rộng của phần tử cha (.row) và hiển thị nội dung "Right Content" */
+	display: flex;
+	align-items: center;	/* căn giữa nội dung theo chiều dọc */
+}
+
+.detail {
+	padding: 0 0.5rem;		/* khoảng đệm ở các cạnh trái và phải là 0,5rem */
+	line-height: 2.2rem;	/* chiều cao dòng là 2.2rem */
+}
+
+.detail .name {
+	font-size: 1.2rem;		/* kích thước font là 1.2rem */
+	font-weight: 700;		/* độ đậm của font là 700 */
+}
+
+.detail .description {
+	font-size: 1rem;
+	margin: 0.7rem 0;		/* khoảng cách là 0.7rem ở trục dọc và 0 ở trục ngang (margin-top và margin-bottom) */
+	line-height: 1.4;		/* chiều cao dòng là 1.4 */
+}
+
+.detail .price {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.quantity,
+.remove {
+	width: 50%;				/* chiều rộng là 50% của phần tử cha */
+	text-align: center;		/* căn chỉnh nội dung của phần tử vào giữa theo chiều ngang */
+}
+
+.quantity>input {
+	display: inline-block;	/* biến phần tử thành một khối inline để có thể điều chỉnh chiều rộng và chiều cao */
+	width: 60px;			/* chiều rộng là 60px cho ô input */
+	height: 60px;			/* chiều cao là 60px cho ô input*/
+	position: relative;
+	left: calc(50% - 30px);		/* dịch chuyển phần tử sang trái một nửa chiều rộng của nó để căn giữa theo chiều ngang */
+	background: #fff;
+	border: 2px solid #ddd;		/* đường viền là viền 2px dày với màu #ddd */
+	text-align: center;
+	font: 600 1.5rem Helvetica, Arial, sans-serif;
+}
+
+.quantity>input:hover,
+.quantity>input:focus {
+	border-color: #f58551;
+}
+
+.close {
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+.close:hover {
+	color: #f58551;
+}
+
+/* --- SUMMARY --- */
+.promotion,
+.summary,
+.checkout {
+	float: left;
+	width: 100%;
+	margin-top: 1.5rem;
+}
+
+.promotion>label {
+	float: left;			/* đưa label về phía trái */
+	width: 100%;			/* label chiếm toàn bộ chiều rộng của phần tử cha */
+	margin-bottom: 1rem;	/* khoảng cách dưới là 1rem giữa các label */
+}
+.promotion>input {
+	float: left;		/* đưa input về phía trái */
+	width: 80%;
+	font-size: 1rem;
+	padding: 1rem 1.5rem;		/* khoảng đệm ở trên và dưới là 1rem, ở trái và phải là 1.5rem */
+	border: 2px solid #16cc9b;
+}
+
+.promotion:hover>input {
+	border-color: #f58551;
+}
+
+.promotion>button {
+	float: left;
+	width: 20%;
+	padding: 1rem 0.5rem;
+}
+
+.promotion:hover>button {
+	border-color: #f58551;
+	background-color: #f58551;
+}
+
+.promotion>button::after {
+	content: "\276f";
+	font-size: 1rem;
+}
+
+.summary {
+	font-size: 1.2rem;
+	text-align: right;
+}
+
+.summary ul li {
+	padding: 0.5rem 0;
+}
+
+.summary ul li span {
+	display: inline-block;
+	width: 30%;
+}
+
+.summary ul li.total {
+	font-weight: bold;
+}
+
+.hide {
+	display: none !important;
+}
+

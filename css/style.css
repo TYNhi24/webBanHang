@@ -1,0 +1,49 @@
+bodybody {
+   font-family: Arial, sans-serif;
+   background-image: white;
+   }
+a {
+   color: #61d161;
+}
+* {
+   box-sizing: border-box;		/* kích thước của phần tử bao gồm cả độ dày của phần viền và đệm, không chỉ là nội dung của phần tử  */
+}
+.register {		/* gán cho phần tử HTML mà bạn muốn định dạng */
+   width: 500px;	/* Chiều rộng là 500px */
+   padding: 16px;		/* Khoảng đệm bên trong là 16px */
+   margin: 0 auto;		/* Căn giữa trên trang */
+   background-color: rgb(180, 191, 195);
+}
+input[type=text], input[type=password] {
+   width: 100%;
+   padding: 15px;		/* Khoảng đệm bên trong là 15px */
+   margin: 5px 0 22px 0;
+   display: inline-block;		/* Hiển thị dạng inline-block */
+   border: none;				/* Không có đường viền */
+   background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+   background-color: #ddd;		/* Màu nền thay đổi khi focus */
+   outline: none;				/* Loại bỏ đường viền khi focus */
+}
+hr {
+   border: 1px solid #c2aeae;
+   margin-bottom: 25px;
+}
+.submit {
+   background-color: #8380c1;
+   color: white;
+   padding: 15px 18px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;		/* chuột trỏ khi di chuột qua phần tử */
+   width: 100%;
+   opacity: 0.9;			/* Độ mờ */
+}
+.submit:hover {
+   opacity: 1;			/* khi hover, độ trong suốt được đặt thành 100% */
+}
+.login {
+   background-color: #e7edea;
+   text-align: center;
+}

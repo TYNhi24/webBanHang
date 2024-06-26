@@ -1,0 +1,140 @@
+/*mobile and tablet*/
+@media (max-width: 1120px) {
+    .header-mobile {
+        display: flex !important;		/* có thể ghi đè lên bất kỳ quy tắc nào khác đã được áp dụng trước đó cho các phần tử này */
+    }
+
+    .header__sort-bar {		/* gán cho ptu HTML bạn muốn định dạng */
+        display: flex !important;		/* flex: sẽ sử dụng mô hình bố cục Flexbox (là 1 phương pháp bố cục mạnh mẽ cho phép bạn sắp xếp các phần tử con một cách linh hoạt và dễ dàng)*/
+    }
+
+    .home-filter {		/* gán cho phần tử HTML mà bạn muốn ẩn */
+        display: none !important;		/* phần tử này sẽ không được hiển thị trên trang web */
+    }
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .nav__mb-close {		/* gán cho phần tử HTML mà bạn muốn định vị */
+        right: 45px !important;		/* cách cạnh phải 45px */
+    }
+}
+
+/* mobile */
+@media (max-width: 739px) {
+    .nav__mb-close {
+        right: 25px !important;
+    }
+    .footer {			/* phần tử HTML mà bạn muốn thêm khoảng cách đệm */
+        padding: 0 30px;		/* khoảng cách đệm: top-bottom:0; left-right: 30px */
+    }
+    .footer__bottom {		/* phần tử HTML mà bạn muốn thêm khoảng cách bên ngoài phía trên */
+        margin-top: 10px;	/* khoảng cách bên ngoài phía trên của phần tử là 10px */
+    }
+
+    /*sp chi tiet*/
+    .product-detail-breadcrumb {		/* gán cho phần tử HTML mà bạn muốn ẩn */
+        display: none !important;
+    }
+
+    .prodoct-detail-info {		/* gán cho phần tử HTML mà bạn muốn định dạng */
+        display: flex;		/* sử dụng mô hình bố cục Flexbox */
+        flex-wrap: wrap !important;		/* cho phép các phần tử con bọc xuống dòng mới nếu không đủ không gian trong một dòng */
+    }
+    #img1 {
+        display: block !important;		/* hiển thị dưới dạng khối */
+    }
+
+    .product-detail-select {		/* gán cho phần tử HTML mà bạn muốn ẩn */
+        display: none !important;
+    }
+
+    .grid__column-left {		/* gán cho phần tử HTML mà bạn muốn định dạng */
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    .grid__column-right {		/* gán cho phần tử HTML mà bạn muốn định dạng */
+        width: 100% !important;
+    }
+}
+/*bố cục bảng */
+.page{
+    max-width: 60em;
+    margin: 0 auto;
+    }
+    table th,
+    table td{
+    text-align: left;
+    }
+    table.layout{
+    width: 100%;
+    border-collapse: collapse;
+    }
+    table.display{
+    margin: 1em 0;
+    }
+    table.display th,
+    table.display td{
+    border: 1px solid #B3BFAA;
+    padding: .5em 1em;
+    }
+
+    table.display th{ background: #D5E0CC; }
+    table.display td{ background: #fff; }
+
+    table.responsive-table{
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 30em){
+        table.responsive-table{
+        box-shadow: none; 
+        }
+        table.responsive-table thead{
+        display: none; 
+        }
+    table.display th,
+    table.display td{
+        padding: .5em;
+    }
+    table.responsive-table td:nth-child(1):before{
+        content: 'Number';
+    }
+    table.responsive-table td:nth-child(2):before{
+        content: 'Name';
+    }
+    table.responsive-table td:nth-child(1),
+    table.responsive-table td:nth-child(2){
+        padding-left: 25%;
+    }
+    table.responsive-table td:nth-child(1):before,
+    table.responsive-table td:nth-child(2):before{
+        position: absolute;
+        left: .5em;
+        font-weight: bold;
+    }
+        table.responsive-table tr,
+        table.responsive-table td{
+            display: block;
+        }
+        table.responsive-table tr{
+            position: relative;
+            margin-bottom: 1em;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        }
+        table.responsive-table td{
+            border-top: none;
+        }
+        table.responsive-table td.organisationnumber{
+            background: #D5E0CC;
+            border-top: 1px solid #B3BFAA;
+        }
+        table.responsive-table td.actions{
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background: none;
+        }
+    }

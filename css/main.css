@@ -1,0 +1,1004 @@
+* {		/* đại diện cho các ptu trong HTML trên trang web */
+	box-sizing: border-box;		/* thay đổi cách tính kích thước của các ptu */
+}
+
+body {		/* áp dụng cho các ptu 'body' của trang web */
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+li a:hover {
+	text-decoration: none;		/* loại bỏ các hiệu ứng trang trí văn bản như gạch chân, gạch ngang */
+}
+
+div button:focus {
+	outline: none;			/* loại bỏ bất kỳ đường viền nào xuất hiện */
+}
+
+/*responsive*/
+.t-k {
+	background-color: tomato;
+	color: rgb(202, 188, 188);
+   }
+.grid__row {
+	display: flex;			/* tự động sắp xếp theo chiều ngang theo mặc định và chúng có thể linh hoạt về kích thước */
+	flex-wrap: wrap;		/* cho phép các phần tử con được bọc xuống dòng mới nếu không đủ không gian */
+	margin-right: -5px;
+	margin-left: -5px;
+}
+
+.grid__column-2 {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 16.6%; /* dieu chinh kich thuoc*/
+	box-sizing: border-box;		/* dễ dàng kiểm soát kích thước tổng (khi áp dụng border và padding) */
+}
+
+.grid__column-2-4 {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 20%;
+	box-sizing: border-box;
+}
+
+.grid__column-10 {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 83.4%;
+	box-sizing: border-box;
+}
+
+/* main css */
+.header-main {		/* header: quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc. hoadon, index, taikhoan, timkiem */
+	display: flex;
+	justify-content: space-between;		/* căn chỉnh các phần tử con của nó theo chiều ngang sao cho khoảng trống giữa chúng là bằng nhau và cực đại */
+	align-items: center;				/* căn chỉnh các phần tử con của nó theo chiều dọc để chúng được căn giữa */
+}
+
+.header {	/* header: quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc. hoadon, index, taikhoan, timkiem */
+	background-color: white;
+	height: 120px;
+}
+
+.header-mobile {
+	padding: 10px;
+	display: none;
+	align-items: center;
+	background-color: #ffc90e ;
+	z-index: 10000;				/* xác định thứ tự độ sâu của một phần tử trên trang web */
+	position: relative;
+}
+
+.search-mb {	/* header: quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc. hoadon, index, taikhoan, timkiem */
+	display: flex;
+	align-items: center;
+}
+
+.search-icon-mb {		/* header */
+	color: white;
+	cursor: pointer;		/* con trỏ chuột sẽ thay đổi hình dạng thành một ngón tay trỏ */
+	margin-left: 8px;
+}
+
+.shopping-cart-icon {		/* header: logo*/
+	width: 28px;
+	height: 28px;
+	color: white;
+}
+
+.shopping-cart-mb {		/* header */
+	display: block;
+	position: absolute;
+	right: 50px;
+	top: 10px;
+}
+
+.shopping-cart-mb:hover {
+	color: white;
+}
+
+.category-btn-mb {
+	width: 28px;
+	height: 28px;
+	color: white;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.nav__overplay {		/* đây là 1 phần giao diện ng dùng của trang web, overplay (phủ mờ) */
+	position: fixed;	/* giữ ở một vị trí cố định trên màn hình dù trang web có cuộn đi đâu */
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	display: none;
+	animation: fadeIn linear 0.2s;			/* làm cho phần tử xuất hiện một cách trơn tru và đều dần (fadeIn) trong 0.2 giây */
+}
+
+.nav__input:checked ~ .nav__overplay {
+	display: block;
+}
+
+.nav__input:checked ~ .nav__mb {
+	transform: translateX(0%);		/* giữ phần tử ở vị trí hiện tại của nó trên trục x mà không làm thay đổi vị trí đó */
+	opacity: 1;					/* điều chỉnh độ trong suốt; từ 0 (hoàn toàn trong suốt) đến 1 (hoàn toàn rõ ràng) */
+}
+
+.header__sort-bar {		/* header: quanlysp, quanlydh, suasp, thongkesp, quanlytk */
+	display: none;
+	height: 46px;
+	list-style: none;
+	background-color: white;
+	margin: 0 auto;
+	padding-left: 0;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+}
+
+.header__sort-item {	/* header: quanlysp, quanlydh, suasp, thongkesp, quanlytk */
+	flex: 1;
+	position: relative;
+}
+
+.header__sort-link {		/* header: quanlysp, quanlydh, suasp, thongkesp, quanlytk */
+	text-decoration: none;
+	display: block;
+	color: #333;
+	font-size: 16px;
+	height: 100%;
+	line-height: 46px;
+	text-align: center;
+}
+
+.header__sort-link::before {	/* header: quanlysp, quanlydh, suasp, thongkesp, quanlytk */
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 60%;
+	border-left: 1px solid #e5e5e5;
+	transform: translateY(-50%);
+}
+
+.header__sort-item:first-child .header__sort-link::before {		/* header: quanlysp, quanlydh, suasp, thongkesp, quanlytk */
+	display: none;
+}
+
+.search {	/* header: quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc. hoadon, index, taikhoan, timkiem */
+	display: flex;
+   align-items: center;
+   width: 38%;
+}
+
+.search-bar {	/* header: quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc. hoadon, index, taikhoan, timkiem */
+	width: 100%;
+	height: 38px;
+	padding: 0 8px;
+	border-radius: 3px;
+	color: #333;
+	font-size: 16px;
+}
+
+.search-icon {	
+	cursor: pointer;
+	margin-left: 8px;
+}
+
+/* phần đầu trang */
+.navigation-bar {	/* cái thanh (trang chủ, giới thiệu...) */
+	background-color: #0f7e36;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-list {		/* header - phan cai thanh */
+	list-style: none; 	/* loại bỏ các kí hiệu mục cho danh sách */
+	padding-left: 0;
+	margin: 0 100px;
+}
+
+.navbar-item,
+.navbar-link {		/* header - phan cai thanh */
+	display: inline-flex;		/* thiết lập kiểu hiển thị cho các mục và liên kết */
+}
+
+.navbar-link {		/* header - phan cai thanh */
+	color: white;
+	padding: 6px 16px;
+	text-decoration: none;
+}
+
+.navbar-link.navbar-link:hover {	/* header - phan cai thanh */
+	color: white;
+	background-color: #66ac88;
+	text-decoration: none;
+}
+
+.navbar-item-category {		/* header - phan cai thanh */
+	position: relative;
+}
+
+.navbar-item-category:hover .navbar-category{		/* header - phan cai thanh */
+	display: flex;
+	z-index: 1000;
+}
+
+.navbar-category {		/* header - phan cai thanh */
+	width: 1349px;
+	position: absolute;
+	top: 35px;
+	z-index: 1;
+	left: -312px;
+	background-color: white;
+	display: none;
+}
+
+.navbar-category-list {		/* header - phan cai thanh */
+	list-style: none;
+	margin-left: 90px;
+}
+
+.navbar-category-item {		/* header - phan cai thanh */
+	padding: 8px 0;
+}
+
+.navbar-category-item-link {		/* header - phan cai thanh */
+	text-decoration: none;
+	color: #333;
+
+}
+
+.slideshow {
+	z-index: 1;
+}
+
+.container {	/* phan body */
+	width: 100%;
+	margin: 0;
+	background-color: #F5F5F5;
+}
+
+/* Danh muc */
+.category {		/* body: quanlyctdh, quanlydm, suadm, themdm, quanlydh, quanlysp, themsp, suasp, thongkesp */
+	background-color: white;
+	border-radius: 3px;
+}
+
+.category-heading {		/* body: quanlyctdh, quanlydm, suadm, themdm, quanlydh, quanlysp, themsp, suasp, thongkesp */
+	color: #333;
+	padding: 8px 16px;
+	font-size: 18px;
+	margin-top: 0;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.category-heading-icon {	/* body */
+	position: relative;
+	top: 1px;
+}
+
+.category-list {		/* body: quanlyctdh, quanlydm, suadm, themdm, quanlydh, quanlysp, themsp, suasp, thongkesp */
+	list-style: none;
+	padding-left: 10px;
+}
+
+.category-item__link {		/* body: quanlyctdh, quanlydm, suadm, themdm, quanlydh, quanlysp, themsp, suasp, thongkesp */
+	position: relative;
+	text-decoration: none;
+	color: #333;
+	padding: 6px 16px;
+	display: block;
+	right: 0;
+	transition: right linear 0.1s;
+}
+
+.category-item__link:hover {	/* body: quanlyctdh, quanlydm, suadm, themdm, quanlydh, quanlysp, themsp, suasp, thongkesp */
+	right: -4px;
+	color: #ffc90e;
+	text-decoration: none;
+}
+
+.btn {		/* body */
+	width: 90px;
+	height: 34px;
+	text-decoration: none;
+	border: none;
+	display: inline-flex;
+	border-radius: 2px;
+	outline: none;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	color: #333;
+	border:none;
+}
+
+.btn.btn-img-1 {
+	background-color: #ffc90e;
+}
+
+/*home-filter*/
+.home-filter {		/* body */
+	background-color: rgba(0, 0, 0, 0.04);
+	display: flex;
+	align-items: center;
+	padding: 18px 22px;
+	border-radius: 2px;
+}
+
+.home-filter-btn {		/* body */
+	margin-right: 12px;
+}
+
+.page {
+	display: flex;
+	align-items: center;
+}
+
+.select-price {
+	position: relative;
+	min-width: 160px;
+	height: 34px;
+	padding: 0 12px;
+	border-radius: 2px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.select-price:hover .select-price-list{
+	display: block;
+}
+
+.select-price-list {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 30px;
+	border-radius: 2px;
+	list-style: none;
+	padding-left: 8px;
+	padding-top: 8px;
+	background-color: white;
+	display: none;
+	z-index: 1;
+	margin-bottom: 10px;
+}
+
+.select-price-link {
+	text-decoration: none;
+	color: #333;
+	display: block;
+	padding: 8px 4px;
+}
+
+.select-price-link:hover {
+	color: #ffc90e;
+	text-decoration: none;
+}
+
+.page {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+.page-num {
+	margin-right: 15px;
+}
+
+.page-control-btn {
+	display: flex;
+	flex: 1;
+	color: #333;
+	text-decoration: none;
+}
+
+.page-control-btn:hover {
+	text-decoration:none;
+	color:#ffc90e;
+}
+
+.page-control-btn:first-child {
+	border-right: 1px solid #ebebeb;
+}
+
+.page-control {
+	display: flex;
+	width: 72px;
+	height: 36px;
+	border-radius: 2px;
+	overflow: hidden;
+	background-color: white;
+}
+
+.page-control-icon {
+	margin: auto;
+}
+
+/* bên dưới là sp */
+.home-product {		/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	padding: 15px;
+	margin-top: -10px;
+}
+
+.home-product-item {	/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	display: block;
+	text-decoration: none;/*loại bỏ gạch chân*/
+	color: #333;
+	background-color: white;
+	position: relative;
+	margin-bottom: 10px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	transition: transform linear 0.1s;
+	will-change: transform;
+}
+
+.home-product-item:hover {	/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	transform: translateY(-1px);
+	text-decoration: none;
+}
+.home-product-item__img {	/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	padding-top: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.home-product-item__name {		/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	font-size: 16px;
+	color: #333;
+	font-weight: 300;
+	margin: 10px 10px 10px 5px;
+	line-height: 18px;
+	height: 36px;
+	overflow: hidden;
+	display: block;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.home-product-item__price {		/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	margin-left: 4px;
+}
+
+
+
+.home-product-item__action {	/* body: timkiem, index, danhmuc, quanlytk, quanlysp, quanlyctdh */
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: 5px 10px 5px;
+}
+
+.home-product-item__like {
+	font-size: 14px;
+}
+
+i.home-product-item__like-fill {
+	display: none;
+	color: #F63D30;
+}
+
+.home-product-item__liked .home-product-item__like-fill {
+	display: inline-block;
+}
+
+.home-product-item__liked .home-product-item__like-none {
+	display: none;
+}
+
+.home-product-item__rating {
+	font-size: 9px;
+	color: #D5D5D5;
+	margin:-1px 0 0 auto;
+}
+
+.home-product-item__star-gold {
+	color: #ffce3d;
+}
+
+.home-product-item__sold {
+	font-size: 14px;
+	color: #333;
+}
+
+.home-product-item__origin {
+	display: flex;
+	justify-content: space-between;
+	color: #595959;
+	margin: 0 5px;
+}
+
+.home-product-item__favorite {
+	position: absolute;
+	top: 10px;
+	left: -4px;
+	color: black;
+	background-color: #ffc90e;
+	font-size: 16px;
+	font-weight: 500;
+	height: 18px;
+	padding-right: 4px;
+	border-bottom-right-radius: 3px;  
+	border-top-right-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-product-item__favorite span {
+	font-size: 14px;
+	font-weight: 450;
+	margin-left: 3px;
+}
+
+.home-product-item__favorite i {
+	font-size: 10px;
+	margin-left: 4px;
+}
+
+.home-product-item__favorite::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	border-top: 3px solid green;
+	border-left: 3px solid transparent;
+}
+
+.home-product-item__sale {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+	height: 36px;
+	background-color: rgba(237, 64,51 ,1); 
+	text-align: center;
+}
+
+.home-product-item__sale::after {
+	content: "";
+	position: absolute;
+	top: 36px;
+	left: 0;
+	border-width: 0 20px 6px;
+	border-style: solid;
+	border-color: red rgba(237, 64,51 ,1) transparent rgba(237, 64,51 ,1); 
+}
+
+.home-product-item__sale-percent {
+	color: #ffc90e;
+	font-size: 13px;
+}
+
+.home-product-item__sale-label {
+	position: absolute;
+	left: 5px;
+	top: 19px;
+	color: white;
+	font-size: 12px;
+	font-weight: 450;
+}
+
+/*Pagination*/
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+}
+
+.pagination-item--active .pagination-item-link {
+	color: white;
+	background-color: #ffc90e;
+}
+
+.pagination-item-link {
+	display: block;
+	text-decoration: none;
+	color: #939393;
+	min-width: 40px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+/*footer*/
+.footer {
+	border-top: 4px solid #0f923d;
+	padding-top: 12px;
+}
+
+.footer__heading {		/* quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc, hoadon, index, taikhoan, timkiem */
+	font-size: 20px;
+}
+
+.footer-list {		/* quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc, hoadon, index, taikhoan, timkiem */
+	padding-left: 0;
+	list-style: none;
+}
+
+.footer-item-link {		/* quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc, hoadon, index, taikhoan, timkiem */
+	text-decoration: none;
+	color: #333;
+	padding: 6px 0;
+	display: block;
+}
+
+.footer-item-link:hover {
+	color: #25bc4d;
+}
+
+.footer__input {
+	margin: 6px 0;
+	width: 230px;
+}
+
+.footer__bottom {		/* quanlyctdh, quanlydm, suadm, themdm, quanlydh, giohang, gioithieu, sanpham, thanhtoan, quanlysp, suasp, themsp, thongkesp, quanlytk, admin, danhmuc, hoadon, index, taikhoan, timkiem */
+	background-color: #f5f5f5;
+	text-align: center;
+}
+
+/* phan sp chi tiet*/
+.product-detail {	/* body: sanpham */
+	background-color: #f5f5f5;
+	display: flex;
+}
+
+.product-detail-breadcrumb {
+	list-style: none;
+	overflow: auto;
+	margin: 10px 0;
+	padding: 0;
+}
+
+.product-detail-breadcrumb li {
+	float: left;
+	padding: 0 6px;
+}
+
+.product-detail-breadcrumb li:first-child {
+	padding-left: 2px;
+}
+
+.product-detail-breadcrumb li:not(:last-child)::after {
+	content: " \276f";
+	padding-left: 8px;
+}
+
+.prodoct-detail-info {		/* body: sanpham */
+	display: flex;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.grid__column-left {		/* body: sanpham */
+	width: 40%;
+	padding: 15px;
+}
+
+.product-detail-item-img {	/* body: sanpham */
+	position: relative;
+}
+
+.product-detail-item-img-general {	/* body: sanpham */
+	position: absolute;
+	width: 100%;
+	padding-top: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.grid__column-right {		/* body: sanpham */
+	width: 60%;
+	padding: 15px;
+	display: block;
+}
+
+.product-detail-title {		/* body: sanpham */
+	display: flex;
+}
+
+.product-detail-favorite {		/* body: sanpham */
+	color: white;
+	background-color: #ffc90e;
+	font-size: 13px;
+	font-weight: 500;
+	border-radius: 3px;
+	text-align: center;
+	height: 25px;
+	padding: 4px;
+	margin-right: 5px;
+	vertical-align: middle;
+	min-width: 80px;
+}
+
+.product-detail-label {		/* body: sanpham */
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	color: #333;
+}
+
+.product-detail-appreciate {		/* body: sanpham */
+	display: flex;
+	margin-top: 20px;
+}
+
+.product-detail-appreciate__space {		/* body: sanpham */
+	padding: 0 15px;
+	border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+.product-detail-label-lb {		/* body: sanpham */
+	margin-left: 5px;
+	font-size: 14px;
+	color: #767676;
+}
+
+.product-detail-color .product-detail-label-lb-width,
+.product-detail-size .product-detail-label-lb-width,
+.product-detail-quantity .product-detail-label-lb-width		/* body: sanpham */
+{
+	min-width: 110px;
+}
+
+.product-detail-appreciate__rating {		/* body: sanpham */
+	padding-left: 0;
+}
+
+
+.product-detail-appreciate__appre {
+	display: flex;
+	align-items: center;
+}
+
+.product-detail-appreciate__sold {
+	display: flex;
+	align-items: center;
+	border-right: none;
+}
+.product-detail-price {
+	padding: 15px 20px;
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	background-color: #fafafa;
+}
+
+.product-detail-price__old {
+	font-size: 14px;
+	text-decoration: line-through;
+	color: #929292;
+	margin-right: 10px;
+}
+
+.product-detail-price__present {
+	font-size: 30px;
+	font-weight: 400;
+	color: red;
+	margin-right: 10px;
+}
+
+.product-detail-price-sale {
+	font-size: 12px;
+	padding: 3px;
+	font-weight: 500;
+	color: white;
+	background-color: red;
+	border-radius: 3px;
+}
+
+.product-detail-ship {		/* body: sanpham */
+	padding: 15px 20px;
+	display: flex;
+}
+
+.product-detail-ship-content-free {
+	display: flex;
+}
+
+.product-detail-ship-content-ship {
+	display: flex;
+	margin-top: 10px;
+}
+
+.product-detail-ship-content-ship-to {
+	display: flex;
+}
+
+.product-detail-ship-content-ship-to--location {
+	margin-left: 10px;
+}
+
+.product-detail-ship-content-ship-to--location:hover {
+	cursor: pointer;
+	color: red;
+}
+
+.product-detail-ship-content-ship-fee--fee {
+	margin-left: 10px;
+	margin-right: 4px;
+}
+
+.product-detail-ship-content-ship-fee--fee:hover {
+	cursor: pointer;
+	color: red;
+}
+
+.product-detail-ship-content-ship-fee {
+	display: flex;
+	margin-top: 8px;
+}
+
+.product-detail-color {		/* body: sanpham */
+	padding: 15px 20px;
+	display: flex;
+}
+
+.product-detail-color-color {		/* body: sanpham */
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+
+.product-detail-size {		/* body: sanpham */
+	display: flex;
+
+	padding: 15px 20px;
+
+}
+
+.product-detail-size-size {		/* body: sanpham */
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product-detail-size-size input,
+.product-detail-color-color input {
+	min-width: 100px;
+	height: 35px;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 2px;
+	border: 1px solid #e8e8e8;
+	padding: 5px 7px;
+	margin:0 10px 10px 0;
+	color: black;
+	font-size: 16px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.product-detail-size-size input:checked,
+.product-detail-color-color input:checked {
+	background-color: #ffc90e;
+	color: white;
+}
+
+.product-detail-size-size input:before,
+.product-detail-color-color input:before {
+	content: attr(label);
+  display: inline-block;
+  text-align: center;
+}
+
+.product-detail-quantity {		/* body: sanpham */
+	display: flex;
+	padding: 15px 20px;
+	align-items: center;
+}
+
+.product-detail-quantity-action {
+	display: flex;
+	margin-right: 10px;
+}
+.product-detail-quantity-btn {
+	height: 30px;
+	width: 25px;
+	border: 1px solid #e8e8e8;
+	color: #999;
+	font-size: 20px;
+	background-color: white;
+	cursor: pointer;
+	line-height: 1;
+}
+.product-detail-quantity-input {		
+	width: 46px;
+	height: 30px;
+	border-radius: 0;
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	border-right: none;
+	border-left: none;
+	outline: none;
+	text-align: center;
+}
+.product-detail-shopping {		/* body: sanpham */
+	display: flex;
+	padding: 15px 20px;
+}
+
+.product-detail-shopping-addtocart-btn {/* body: sanpham thêm vào giỏ hàng */ 
+	width: 180px;
+	height: 46px;
+	padding: 0 12px;
+	border: 1px solid red;
+	color: red;
+	font-size: 16px;
+	font-weight: 300;
+	background-color: white;
+	border-radius: 2px;
+	margin-right: 15px;
+}
+
+
+/* phan chi tiet sp */
+.product-detail-decribe {		/* body: themdm, suadm, sanpham, themsp, admin, hoadon */
+	padding: 25px;
+	background-color: white;
+	margin-top: 10px;
+}
+.product-detail-decribe-heading {	/* body: sanpham */
+	background-color: #fafafa;
+	font-size: 18px;
+	font-weight: 200;
+	padding: 15px;
+	margin: 0;
+	margin-bottom: 15px;
+}
+.product-detail-describe__detail-content-row {	/* body: sanpham */		/* chi tiết sản phẩm: sanpham.php */
+	display: flex;
+	align-items: center;
+	margin-bottom: 18px;
+}
+
+.product-detail-describe-label {		/* body: sanpham */
+	font-size: 16px;
+	color: rgba(206,153,153,1);
+	width: 200px;
+	margin-left: 15px;
+	margin-bottom: 0;
+}
+
+.product-detail-describe__describe-content {		/* body: sanpham */
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+.product-detail-describe-content {		/* body: sanpham */
+	white-space: pre-wrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis;
+}
+.product-detail-appreciation {		/* body: sanpham */
+	padding: 25px;
+	background-color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+
+
